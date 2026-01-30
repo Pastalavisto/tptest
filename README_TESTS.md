@@ -60,22 +60,6 @@ npm run cypress:run
 
 **Total: 15 tests Cypress**
 
----
-
-## Tous les Scripts NPM
-
-| Script | Commande | Description |
-|--------|----------|-------------|
-| `npm start` | `ng serve` | Lance le serveur dev |
-| `npm test` | `ng test` | Lance Jest (unit tests) |
-| `npm run cypress` | `cypress open` | Lance Cypress UI |
-| `npm run cypress:run` | `cypress run` | Lance Cypress headless |
-| `npm run test:coverage` | `ng test --code-coverage` | Rapport de couverture |
-
----
-
-## Couverture de Tests
-
 ### Générer le rapport
 ```bash
 npm run test:coverage
@@ -95,39 +79,3 @@ npm test
 npm start &
 npm run cypress:run
 ```
-
----
-
-## Structure des Tests
-
-```
-src/app/
-├── app.spec.ts
-├── services/
-│   ├── poke-api-service.spec.ts
-│   └── selected-pokemon-service.spec.ts
-├── components/
-│   ├── poke-search/
-│   │   └── poke-search.spec.ts
-│   └── poke-displayer/
-│       └── poke-displayer.spec.ts
-└── pipes/
-    └── filter-pokemon-pipe.spec.ts
-
-cypress/
-├── e2e/
-│   ├── pokedemo.cy.ts
-│   └── pokedemo-flow.cy.ts
-└── support/
-    └── e2e.ts
-```
-
----
-
-## Résumé
-
-✅ **38 Tests Jest** - Unit tests avec mocking  
-✅ **15 Tests Cypress** - E2E tests  
-✅ **53 tests au total**
-
-Tous les tests passent ✅
