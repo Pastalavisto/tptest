@@ -1,0 +1,7 @@
+<div class="page-container">
+  <app-poke-search />
+  @if (this.selectedPokemonService.getId() != 0) {
+  <app-poke-displayer />
+  }
+</div>
+<router-outlet />

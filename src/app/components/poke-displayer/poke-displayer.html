@@ -1,0 +1,16 @@
+<mat-card class="displayer">
+  <div class="image-card">
+    <p>#{{ pokeApiService.selectedPokemon()?.id }} {{ pokeApiService.selectedPokemon()?.name }}</p>
+    <mat-card>
+      <img src="{{ pokeApiService.selectedPokemon()?.sprites?.front_default }}" />
+    </mat-card>
+  </div>
+  <div class="stats">
+    @for (stat of this.pokeApiService.selectedPokemon()?.stats; track stat.stat.name) {
+    <p>
+      <b> {{ stat.stat.name }} </b>
+      {{ stat.base_stat }}
+    </p>
+    }
+  </div>
+</mat-card>

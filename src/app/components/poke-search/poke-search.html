@@ -1,0 +1,32 @@
+<div class="inputs-container">
+    <mat-form-field>
+        <mat-label>Id</mat-label>
+        <input matInput type="number" 
+               [ngModel]="selectedId()" 
+               (ngModelChange)="onPokemonSelected($event)">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>ID affiché</mat-label>
+        <input matInput readonly [value]="selectedId()">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Rechercher par nom :</mat-label>
+        <input style="text-transform: capitalize;" matInput type="text" 
+               [ngModel]="nameFilter()" 
+               (ngModelChange)="onNameFilterChange($event)">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Sélectionner Pokémon</mat-label>
+        <mat-select style="text-transform: capitalize;" id="pokemon" 
+                    [ngModel]="selectedId()" 
+                    (ngModelChange)="onPokemonSelected($event)">
+            @for (pokemon of (pokeApiService.pokemons() | filterPokemonPipe:'name':nameFilter()); track pokemon.id) {
+            <mat-option style="text-transform: capitalize;" [value]="pokemon.id">{{pokemon.name}}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+
+    </div>

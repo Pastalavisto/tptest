@@ -1,0 +1,14 @@
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 12px;
+}
+
+.inputs-container mat-form-field {
+    width: 100%;
+}
+
+.inputs-container button {
+    align-self: center;
+}
